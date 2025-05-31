@@ -1,0 +1,23 @@
+Feature: Adăugare comentariu pe YouTube
+
+  Scenario #1: Utilizatorul autentificat adaugă un comentariu pe un videoclip
+    Given utilizatorul este autentificat pe YouTube
+    And utilizatorul se află pe pagina unui videoclip
+    When utilizatorul introduce un comentariu valid în câmpul de comentarii
+    And apasă butonul "Comentează"
+    Then comentariul este afișat în lista de comentarii
+    And utilizatorul vede mesajul de confirmare "Comentariul a fost publicat"
+
+
+  Scenario 2#: Utilizatorul autentificat adaugă un comentariu pe un videoclip
+    Given utilizatorul nu este autentificat pe YouTube
+    And utilizatorul se află pe pagina unui videoclip
+    When utilizatorul introduce un comentariu valid în câmpul de comentarii
+    And apasă butonul "Comentează"
+    Then utilizatorul nu poate lasa un comentariu
+    Given utilizatorul este autentificat pe YouTube
+    Then comentariul nu este afișat în lista de comentarii
+    When utilizatorul nu introduce nici un comentariu în câmpul de comentarii
+    And apasă butonul "Comentează"
+
+
