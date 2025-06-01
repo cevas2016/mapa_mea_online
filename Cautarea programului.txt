@@ -1,0 +1,14 @@
+Feature: Cautare de program
+Scenario 1 : Utilizatorul poate cauta
+
+Given: Utilizatorul nelogat se afla pe pagina /programme-finder          #Preconditia
+When: Utilizatorul tapeaza textul unui program existent in bara de cautare     #pasi
+And: Da click pe butonul "Search"
+Then:Utilizatorul vede rezultatul dorit
+
+
+Scenario 2:Utilizatorul nu poate cauta
+Given: Utilizatorul nelogat se afla pe pagina /programme-finder          #Preconditia
+When: Utilizatorul tapeaza textul unui program inexistent in bara de cautare     #pasi
+And: Da click pe butonul "Search"
+Then:Utilizatorul nu vede rezultatul dorit
